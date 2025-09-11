@@ -17,7 +17,7 @@ The team is investigating how **spatial scaling and averaging** influence the ap
 
 ## 🧪 Experiments and code description
 - Data cleaning
-- Defining community and clustering: We have tried multiple clustering approach. Our final approach was Agglomerative clustering
+- Defining community and clustering: We have tried multiple clustering approaches. Our final approach was Agglomerative clustering
 - Application of jaccard index: Species movement and multi-year comparison
 
 ## 👥 Contributors
