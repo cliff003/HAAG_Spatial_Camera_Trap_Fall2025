@@ -1,5 +1,7 @@
 # 🐾 Project HAAG Spatial Cameratrap
-HAAG OMSCS Fall 2025
+HAAG OMSCS Fall 2025  
+- [About HAAG](https://sites.gatech.edu/human-augmented-analytics-group/)
+- [Project Wiki](https://humanaugmentedanalyticsgroup.miraheze.org/wiki/Project-haag-spatial-cameratrap)
 
 ## 📌 Overview
 Welcome to **HAAG Spatial Cameratrap**. This repository contains everything you need to know about the project, along with links to important resources and contributors.
@@ -21,12 +23,15 @@ The team is investigating how **spatial scaling and averaging** influence the ap
 - Application of jaccard index: Species movement and multi-year comparison
 
 ## 👥 Contributors
-- Jacquie Carroll <jacq@udel.edu>
-- Kefei Yan <kyan66@gatech.edu>
-- Neelima Pandey <nsrivastava44@gatech.edu>
-- John Hiedo <jhiedo3@gatech.edu>
-- Andrew Nguyen <anguyen626@gatech.edu>
-- Aparna Suresh <asuresh85@gatech.edu>
+| Name            | Email                        |
+|-----------------|------------------------------|
+| Jacquie Carroll | <jacq@udel.edu>              |
+| Kefei Yan       | <kyan66@gatech.edu>          |
+| Neelima Pandey  | <nsrivastava44@gatech.edu>   |
+| John Hiedo      | <jhiedo3@gatech.edu>         |
+| Andrew Nguyen   | <anguyen626@gatech.edu>      |
+| Aparna Suresh   | <asuresh85@gatech.edu>       |
+
 
 ## 🐍 Built With
 [![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python&logoColor=white)](https://www.python.org/)
@@ -34,3 +39,4 @@ The team is investigating how **spatial scaling and averaging** influence the ap
 ![Visitors](https://img.shields.io/badge/visitors-∞-blue?style=flat-square&logo=github)
 
 ------------------------
+
