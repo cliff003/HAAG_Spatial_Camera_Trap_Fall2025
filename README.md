@@ -22,8 +22,6 @@ The team is investigating how **spatial scaling and averaging** influence the ap
 
 ## 👥 Contributors
 - Jacquie Carroll <jacq@udel.edu>
-- Ayush Prasad
-
 - Kefei Yan <kyan66@gatech.edu>
 - Neelima Pandey <nsrivastava44@gatech.edu>
 - John Hiedo <jhiedo3@gatech.edu>
