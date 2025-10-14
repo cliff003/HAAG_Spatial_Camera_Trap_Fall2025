@@ -50,4 +50,4 @@
 *.reason filter=lfs diff=lfs merge=lfs -text
 *.lxo filter=lfs diff=lfs merge=lfs -text
 *.bc filter=lfs diff=lfs merge=lfs -text
-data/species_list_5km.csv filter=lfs diff=lfs merge=lfs -text
+data/ssusa/species_list_5km.csv filter=lfs diff=lfs merge=lfs -text
