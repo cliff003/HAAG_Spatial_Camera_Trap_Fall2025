@@ -25,7 +25,7 @@ The team is investigating how **spatial scaling and averaging** influence the ap
 
 ### In Progress (Spring 2026)
 - 🔄 Assess **sampling completeness** using Species Accumulation Curves (SAC) and CI gap analysis
-- 🔄 Classify array-year sampling quality using **Type A/B/C/D system** (SAC + Poisson CI gap)
+- 🔄 Classify array-year sampling quality using **SAC + Poisson CI gap** method
 - 🔄 Compare **IUCN expected species** with **SSUSA observed species** to quantify detection bias
 - 🔄 Add **trait information** (e.g., body mass, diet, activity pattern) for terrestrial mammals
 
