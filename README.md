@@ -57,7 +57,7 @@ All prior work from Summer and Fall 2025 is stored in `Archive/`. Below is a sum
 | `ClusteringValidate.ipynb` | Validates clustering by computing each deployment's haversine distance to its cluster centroid; generates summary stats and spatial maps. |
 | `Species_List_Cluster.ipynb` | Generates per-cluster and per-cluster-year species lists. Creates one-hot presence/absence matrices and exports CSVs to `Species_List_Cluster/`. |
 
-### 3. Analysis (`Summer2025/Ananlysis/`)
+### 3. Analysis (`Summer2025/Analysis/`)
 
 | Notebook | Description |
 |----------|-------------|
