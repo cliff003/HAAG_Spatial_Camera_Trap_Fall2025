@@ -1,1 +1,0 @@
-This file contains the analysis done to compare the SSUSA species to the locations of the IUCN species. It finds the number of species present in the SSUSA data that are within and not within IUCN polygons.
