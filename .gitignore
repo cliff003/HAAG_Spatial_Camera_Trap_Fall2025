@@ -1,3 +1,4 @@
 .ipynb_checkpoints/DataCleaning-checkpoint.ipynb
 /.ipynb_checkpoints
 data/MAMMALS_TERRESTRIAL_ONLY/
+data/ITIS.sqlite
