@@ -1,6 +1,6 @@
 # Data Cleaning Report
 
-Generated: 2026-04-15 23:49:47
+Generated: 2026-04-16 00:06:35
 
 ## Raw data
 - SSUSA sequences: 987,979 rows
@@ -64,13 +64,12 @@ padding = 1.0 degrees
 - ovis aries
 - urva javanica
 
-- Synonyms applied (9):
+- Synonyms applied (8):
 
 - `mustela frenata` -> `neogale frenata`
 - `myodes gapperi` -> `clethrionomys gapperi`
 - `neovison vison` -> `neogale vison`
 - `pekania pennanti` -> `martes pennanti`
-- `arizona black-tailed prairie dog` -> `black-tailed prairie dog`
 - `canis familiaris` -> `canis lupus familiaris`
 - `capra aegagrus hircus` -> `capra hircus`
 - `cervus canadensis` -> `cervus elaphus`
