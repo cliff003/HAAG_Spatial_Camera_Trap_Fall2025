@@ -10,24 +10,55 @@ Welcome to **HAAG Spatial Cameratrap**. This repository contains everything you 
 The team is investigating how **spatial scaling and averaging** influence the apparent composition of **terrestrial mammal** communities captured through camera trap data.
 
 **Data sources**:
-- [Snapshot USA](https://datadryad.org/dataset/doi:10.5061/dryad.k0p2ngfhn#methods) — a multi-institutional camera trap survey across the United States.
-- [IUCN Red List Spatial Data](https://www.iucnredlist.org/resources/spatial-data-download#mammals) — mammal range map polygons.
+- [Snapshot USA](https://datadryad.org/dataset/doi:10.5061/dryad.k0p2ngfhn#methods) — a multi-institutional camera trap survey across the United States (2019–2024).
+- [IUCN Red List Spatial Data](https://www.iucnredlist.org/resources/spatial-data-download#mammals) — terrestrial mammal range map polygons.
+- [COMBINE: a coalesced mammal database of intrinsic and extrinsic traits](https://doi.org/10.1002/ecy.3344) (Soria et al. 2021, *Ecology*) — functional traits for 6,110 terrestrial mammal species (replaces PanTHERIA).
 
 ## 🎯 Goals
 
 ### Completed
-- ✅ Download and clean **SnapShot USA** data — *Summer 2025, refined Fall 2025*
+- ✅ Download and clean **SnapShot USA** data — *Summer 2025, refined Fall 2025, rebuilt Spring 2026*
 - ✅ Compile species that comprise individual "communities" by:
   - ✅ Using single-site data in **1-year** and **multi-year** intervals — *Summer 2025*
   - ✅ Spatially clustering cameras within **50 km** and aggregating data across all years — *Summer 2025, Agglomerative Clustering*
 - ✅ Compare the **compositions of these communities** — *Summer 2025, Jaccard Index & Shannon Diversity*
 - ✅ Compare communities from camera trap data with communities derived from **IUCN range maps** — *Summer 2025 initial, Fall 2025 full spatial comparison*
+- ✅ Build a **parameterized cleaning pipeline** combining SSUSA + IUCN + COMBINE traits — *Spring 2026*
+- ✅ Replace PanTHERIA with **COMBINE** as the trait source, closing the 34% body-mass coverage gap — *Spring 2026*
+- ✅ **SAC analysis** at body-mass thresholds (50, 100, 500, 1000 g) via `vegan::specaccum` — *Spring 2026*
 
 ### In Progress (Spring 2026)
-- 🔄 Assess **sampling completeness** using Species Accumulation Curves (SAC) and CI gap analysis
 - 🔄 Classify array-year sampling quality using **SAC + Poisson CI gap** method
-- 🔄 Compare **IUCN expected species** with **SSUSA observed species** to quantify detection bias
-- 🔄 Add **trait information** (e.g., body mass, diet, activity pattern) for terrestrial mammals
+- 🔄 Compare **IUCN expected species** with **SSUSA observed species** to quantify detection bias at each mass threshold
+
+---
+
+## 🧪 Current Primary Pipeline (Spring 2026)
+
+The canonical workflow lives at the repo root and produces a single set of cleaned artifacts that all downstream analyses consume.
+
+### Notebooks
+
+| Notebook | Role |
+|---|---|
+| [`data_cleaning.ipynb`](data_cleaning.ipynb) | **Primary cleaning pipeline.** Ingests raw SSUSA + IUCN + COMBINE, applies taxonomy normalization and synonym mapping, drops domestic/exotic/semi-aquatic/human records, merges body mass, writes canonical outputs and an auto-generated markdown report. All tunable parameters (paths, thresholds, exclusion lists, scope flags) live in Cell 2. |
+| [`SAC_Combine_MassThresholds.ipynb`](SAC_Combine_MassThresholds.ipynb) | Species accumulation curves (SSUSA vs IUCN) at body-mass thresholds of 50 / 100 / 500 / 1000 g. Consumes the cleaned outputs. Uses R `vegan::specaccum` via `rpy2`. |
+| [`DataCleaning_old.ipynb`](DataCleaning_old.ipynb) | Previous cleaning notebook — kept as historical reference. Superseded by `data_cleaning.ipynb`. |
+
+### Cleaned Outputs (`cleaned/`)
+
+| File | Contents |
+|---|---|
+| `ssusa_cleaned.csv` | ~713K SSUSA records × 29 cols (109 species), Pascal_Case. Includes `Species_Name` (normalized binomial), `Body_Mass_g`, `Above_Threshold`, `Scope_Flag`. |
+| `iucn_cleaned.shp` (+ .dbf/.shx/.prj/.cpg) | ~733 IUCN polygons × 27 attribute cols (575 species). Includes `sci_name`, `body_mass`, `ab_thres`, `scope_flag`. Wide attribute retention (not just species+geometry). |
+| `data_cleaning_report.md` | Auto-generated summary: waterfall, IUCN bbox, taxonomy reconciliation, exclusion tallies, body-mass threshold counts. |
+
+### Key Design Decisions
+
+- **IUCN bbox is derived from SSUSA footprint** (not hard-coded CONUS) so Alaska + Hawaii deployments are covered.
+- **IUCN filter:** `presence=1` (extant), `origin ∈ {1,2,3}` (native, reintroduced, introduced), `seasonal ∈ {1,2}` (resident, breeding). Includes reintroduced to capture endangered species (e.g. black-footed ferret, red wolf).
+- **Exclusions** split into separate audited lists: `SEMI_AQUATIC_MARINE`, `DOMESTIC_SPECIES`, `NON_NATIVE_EXOTICS`, `HUMANS`.
+- **Trait source is swappable.** COMBINE is loaded in Section 1c only; changing `TRAIT_PATH` and the Section 1c loader is all it takes to plug in a different trait database.
 
 ---
 
@@ -116,6 +147,8 @@ All prior work from Summer and Fall 2025 is stored in `Archive/`. Below is a sum
 ##  Built With
 [![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![R](https://img.shields.io/badge/R-4.x-blue?logo=r&logoColor=white)](https://www.r-project.org/)
+
+**Core dependencies:** `pandas`, `geopandas`, `rpy2` (+ R `vegan`), `matplotlib`. The data-cleaning notebook runs on any generic `python3` Jupyter kernel; the SAC notebook requires an R-enabled kernel with `vegan` installed.
 
 ![Visitors](https://img.shields.io/badge/visitors-∞-blue?style=flat-square&logo=github)
 
