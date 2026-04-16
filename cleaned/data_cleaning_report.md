@@ -1,11 +1,12 @@
 # Data Cleaning Report
 
-Generated: 2026-04-15 23:02:19
+Generated: 2026-04-15 23:35:57
 
 ## Raw data
 - SSUSA sequences: 987,979 rows
 - SSUSA deployments: 9,679 rows
-- IUCN polygons (after bbox load): 733 (post-clean)
+- IUCN polygons (after bbox load): 767 (580 species)
+- IUCN polygons (after filter + exclusion): 733 (575 species)
 - COMBINE ([Soria et al. 2021](https://doi.org/10.1002/ecy.3344)): 5,961 species, 5,744 with body mass
 
 ## SSUSA cleaning waterfall
