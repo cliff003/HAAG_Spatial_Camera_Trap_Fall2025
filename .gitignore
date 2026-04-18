@@ -5,3 +5,5 @@
 
 data/MAMMALS_TERRESTRIAL_ONLY/
 data/ITIS.sqlite
+.DS_Store
+__pycache__/
