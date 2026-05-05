@@ -1,12 +1,12 @@
 # Data Cleaning Report
 
-Generated: 2026-04-16 00:06:35
+Generated: 2026-05-04 21:47:48
 
 ## Raw data
 - SSUSA sequences: 987,979 rows
 - SSUSA deployments: 9,679 rows
 - IUCN polygons (after bbox load): 767 (580 species)
-- IUCN polygons (after filter + exclusion): 733 (575 species)
+- IUCN polygons (after filter + exclusion): 744 (571 species)
 - COMBINE ([Soria et al. 2021](https://doi.org/10.1002/ecy.3344)): 5,961 species, 5,744 with body mass
 
 ## SSUSA cleaning waterfall
@@ -26,7 +26,7 @@ padding = 1.0 degrees
 ```
 
 ## Taxonomy reconciliation
-- Total unique species across all three sources: **5982**
+- Total unique species across all three sources: **5977**
 - Present in all three sources: **110**
 - In SSUSA but not IUCN (20 species):
 
@@ -99,7 +99,7 @@ padding = 1.0 degrees
 
 ## Cleaned outputs
 - `ssusa_cleaned.csv`: **713,319 rows**, 29 columns, 109 species
-- `iucn_cleaned.shp`: **733 polygons**, 27 attribute columns, 575 species
+- `iucn_cleaned.shp`: **744 polygons**, 27 attribute columns, 571 species
 
 ## Body-mass threshold summary
 - Threshold: **500 g**
