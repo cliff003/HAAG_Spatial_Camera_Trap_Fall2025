@@ -1,13 +1,13 @@
 # Data Cleaning Report
 
-Generated: 2026-04-16 00:06:35
+Generated: 2026-05-05 05:28:48
 
 ## Raw data
 - SSUSA sequences: 987,979 rows
 - SSUSA deployments: 9,679 rows
 - IUCN polygons (after bbox load): 767 (580 species)
-- IUCN polygons (after filter + exclusion): 733 (575 species)
-- COMBINE ([Soria et al. 2021](https://doi.org/10.1002/ecy.3344)): 5,961 species, 5,744 with body mass
+- IUCN polygons (after filter + exclusion): 749 (577 species)
+- COMBINE ([Soria et al. 2021](https://doi.org/10.1002/ecy.3344)): 5,960 species, 5,744 with body mass
 
 ## SSUSA cleaning waterfall
 | Stage | Rows |
@@ -26,7 +26,7 @@ padding = 1.0 degrees
 ```
 
 ## Taxonomy reconciliation
-- Total unique species across all three sources: **5982**
+- Total unique species across all three sources: **5970**
 - Present in all three sources: **110**
 - In SSUSA but not IUCN (20 species):
 
@@ -64,7 +64,7 @@ padding = 1.0 degrees
 - ovis aries
 - urva javanica
 
-- Synonyms applied (8):
+- Synonyms applied (20):
 
 - `mustela frenata` -> `neogale frenata`
 - `myodes gapperi` -> `clethrionomys gapperi`
@@ -74,6 +74,18 @@ padding = 1.0 degrees
 - `capra aegagrus hircus` -> `capra hircus`
 - `cervus canadensis` -> `cervus elaphus`
 - `sus scrofa scrofa` -> `sus scrofa`
+- `alexandromys oeconomus` -> `microtus oeconomus`
+- `clethrionomys californicus` -> `myodes californicus`
+- `clethrionomys rutilus` -> `myodes rutilus`
+- `sorex monticola` -> `sorex monticolus`
+- `casiomys alfaroi` -> `handleyomys alfaroi`
+- `casiomys melanotis` -> `handleyomys melanotis`
+- `casiomys rostratus` -> `handleyomys rostratus`
+- `neoeptesicus brasiliensis` -> `eptesicus brasiliensis`
+- `neoeptesicus furinalis` -> `eptesicus furinalis`
+- `diaemus youngii` -> `diaemus youngi`
+- `molossus alvarezi` -> `molossus rufus`
+- `cyclopes dorsalis` -> `cyclopes didactylus`
 
 
 ## Exclusion tallies
@@ -99,7 +111,7 @@ padding = 1.0 degrees
 
 ## Cleaned outputs
 - `ssusa_cleaned.csv`: **713,319 rows**, 29 columns, 109 species
-- `iucn_cleaned.shp`: **733 polygons**, 27 attribute columns, 575 species
+- `iucn_cleaned.shp`: **749 polygons**, 27 attribute columns, 577 species
 
 ## Body-mass threshold summary
 - Threshold: **500 g**
