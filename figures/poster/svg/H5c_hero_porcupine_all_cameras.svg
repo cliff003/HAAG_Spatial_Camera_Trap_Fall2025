@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-28T13:57:43.484999</dc:date>
+    <dc:date>2026-05-05T06:39:00.504090</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -83489,20 +83489,20 @@ z
    </g>
    <g id="legend_1">
     <g id="patch_3">
-     <path d="M 16.50024 447.721272 
-L 46.50024 447.721272 
-L 46.50024 437.221272 
-L 16.50024 437.221272 
+     <path d="M 16.50024 446.111116 
+L 46.50024 446.111116 
+L 46.50024 435.611116 
+L 16.50024 435.611116 
 z
 " style="fill: #cfc7ab; stroke: #1f1f1f; stroke-width: 1.4; stroke-linejoin: miter"/>
     </g>
     <g id="text_2">
-     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="447.721272" transform="rotate(-0 58.50024 447.721272)">IUCN range</text>
+     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="446.111116" transform="rotate(-0 58.50024 446.111116)">IUCN range</text>
     </g>
     <g id="line2d_1">
-     <path d="M 16.50024 463.954084 
-L 31.50024 463.954084 
-L 46.50024 463.954084 
+     <path d="M 16.50024 462.878303 
+L 31.50024 462.878303 
+L 46.50024 462.878303 
 " style="fill: none; stroke: #000000; stroke-opacity: 0; stroke-width: 1.5; stroke-linecap: square"/>
      <defs>
       <path id="mee5e13f8df" d="M 0 6 
@@ -83518,16 +83518,16 @@ z
 " style="stroke: #1f1f1f"/>
      </defs>
      <g>
-      <use xlink:href="#mee5e13f8df" x="31.50024" y="463.954084" style="fill: #c7623c; stroke: #1f1f1f"/>
+      <use xlink:href="#mee5e13f8df" x="31.50024" y="462.878303" style="fill: #c7623c; stroke: #1f1f1f"/>
      </g>
     </g>
     <g id="text_3">
-     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="469.204084" transform="rotate(-0 58.50024 469.204084)">detected in-range</text>
+     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="468.128303" transform="rotate(-0 58.50024 468.128303)">detected in-range</text>
     </g>
     <g id="line2d_2">
-     <path d="M 16.50024 485.436897 
-L 31.50024 485.436897 
-L 46.50024 485.436897 
+     <path d="M 16.50024 484.895491 
+L 31.50024 484.895491 
+L 46.50024 484.895491 
 " style="fill: none; stroke: #000000; stroke-opacity: 0; stroke-width: 1.5; stroke-linecap: square"/>
      <defs>
       <path id="m8e17856193" d="M 0 6 
@@ -83543,16 +83543,16 @@ z
 " style="stroke: #1f1f1f"/>
      </defs>
      <g>
-      <use xlink:href="#m8e17856193" x="31.50024" y="485.436897" style="fill: #b5785a; stroke: #1f1f1f"/>
+      <use xlink:href="#m8e17856193" x="31.50024" y="484.895491" style="fill: #b5785a; stroke: #1f1f1f"/>
      </g>
     </g>
     <g id="text_4">
-     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="490.686897" transform="rotate(-0 58.50024 490.686897)">detected · out-of-range</text>
+     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="490.145491" transform="rotate(-0 58.50024 490.145491)">detected · out-of-range</text>
     </g>
     <g id="line2d_3">
-     <path d="M 16.50024 506.919709 
-L 31.50024 506.919709 
-L 46.50024 506.919709 
+     <path d="M 16.50024 506.912678 
+L 31.50024 506.912678 
+L 46.50024 506.912678 
 " style="fill: none; stroke: #000000; stroke-opacity: 0; stroke-width: 1.5; stroke-linecap: square"/>
      <defs>
       <path id="mbd00558a87" d="M 0 6 
@@ -83568,11 +83568,11 @@ z
 " style="stroke: #706a58; stroke-width: 1.5"/>
      </defs>
      <g>
-      <use xlink:href="#mbd00558a87" x="31.50024" y="506.919709" style="fill-opacity: 0; stroke: #706a58; stroke-width: 1.5"/>
+      <use xlink:href="#mbd00558a87" x="31.50024" y="506.912678" style="fill-opacity: 0; stroke: #706a58; stroke-width: 1.5"/>
      </g>
     </g>
     <g id="text_5">
-     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="512.169709" transform="rotate(-0 58.50024 512.169709)">not detected</text>
+     <text style="font-size: 15px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1f1f1f" x="58.50024" y="512.162678" transform="rotate(-0 58.50024 512.162678)">not detected</text>
     </g>
    </g>
   </g>
