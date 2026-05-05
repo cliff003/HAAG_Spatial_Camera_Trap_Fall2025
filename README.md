@@ -52,7 +52,7 @@ The canonical workflow lives at the repo root and produces a single set of clean
 | File | Contents |
 |---|---|
 | `ssusa_cleaned.csv` | ~713K SSUSA records × 29 cols (109 species), Pascal_Case. Includes `Species_Name` (normalized binomial), `Body_Mass_g`, `Above_Threshold`, `Scope_Flag`. |
-| `iucn_cleaned.shp` (+ .dbf/.shx/.prj/.cpg) | ~733 IUCN polygons × 27 attribute cols (575 species). Includes `sci_name`, `body_mass`, `ab_thres`, `scope_flag`. Wide attribute retention (not just species+geometry). |
+| `iucn_cleaned.shp` (+ .dbf/.shx/.prj/.cpg) | ~749 IUCN polygons × 27 attribute cols (577 species). Includes `sci_name`, `body_mass`, `ab_thres`, `scope_flag`. Wide attribute retention (not just species+geometry). |
 | `data_cleaning_report.md` | Auto-generated summary: waterfall, IUCN bbox, taxonomy reconciliation, exclusion tallies, body-mass threshold counts. |
 
 ### Preprocessed Outputs (`preprocessed_data/`)
@@ -63,14 +63,15 @@ Produced by [`ssusa_iucn_spatial_join.ipynb`](ssusa_iucn_spatial_join.ipynb). Al
 |---|---|
 | `ssusa_camera_footprints_1km.geojson` | 7,340 camera 1 km buffers (EPSG:5070). Tracked via Git LFS. |
 | `ssusa_array_footprints_1km.geojson` | 262 array-level union footprints — camera buffers dissolved by `Camera_Trap_Array` (EPSG:5070). Tracked via Git LFS. |
-| `iucn_camera_species_lookup_1km.csv` | Camera × IUCN species lookup (321,727 rows): `camera_fp_id, Longitude, Latitude, sci_name, ab_thres`. |
-| `iucn_array_species_lookup_1km.csv` | Array × IUCN species lookup (11,927 rows): `Camera_Trap_Array, sci_name, ab_thres`. |
+| `iucn_camera_species_lookup_1km.csv` | Camera × IUCN species lookup (321,962 rows): `camera_fp_id, Longitude, Latitude, sci_name, ab_thres`. |
+| `iucn_array_species_lookup_1km.csv` | Array × IUCN species lookup (11,935 rows): `Camera_Trap_Array, sci_name, ab_thres`. |
 
 ### Key Design Decisions
 
 - **IUCN bbox is derived from SSUSA footprint** (not hard-coded CONUS) so Alaska + Hawaii deployments are covered.
-- **IUCN filter:** `presence=1` (extant), `origin ∈ {1,2,3}` (native, reintroduced, introduced), `seasonal ∈ {1,2}` (resident, breeding). Includes reintroduced to capture endangered species (e.g. black-footed ferret, red wolf).
+- **IUCN filter:** `presence ∈ {1,2,3,4,6}` (everything except 5=Extinct), `origin ∈ {1,2,3,5}` (native, reintroduced, introduced, origin uncertain — drops 4=Vagrant and 6=Assisted Colonisation), `seasonal ∈ {1,2,3,4,5}` (all — mammals are ~99% Seasonal=1 in CONUS so this is effectively a no-op). Per-axis include/exclude rationale documented inline in `data_cleaning.ipynb` Cell 2.
 - **Exclusions** split into separate audited lists: `SEMI_AQUATIC_MARINE`, `DOMESTIC_SPECIES`, `NON_NATIVE_EXOTICS`, `HUMANS`.
+- **Taxonomy renames handled via `SYNONYMS` dict (Bucket B).** IUCN 2023+ binomials that COMBINE 2021 doesn't yet carry are mapped to the older names that COMBINE knows (e.g. `clethrionomys rutilus` → `myodes rutilus`, `casiomys alfaroi` → `handleyomys alfaroi`). The pipeline self-heals: future renames surface in the runtime log so they can be added to `SYNONYMS` rather than dropped.
 - **Trait source is swappable.** COMBINE is loaded in Section 1c only; changing `TRAIT_PATH` and the Section 1c loader is all it takes to plug in a different trait database.
 - **Spatial CRS.** Buffers and dissolves run in `EPSG:5070` (NAD83 Albers Equal Area); inputs are reprojected from `EPSG:4326` before any distance-based operation.
 - **Lookup tables are lightweight.** IUCN geometries are dropped after the spatial join so the 321 K-row camera lookup stays a plain CSV.
